@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Popup</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+</body>
+
+
+<script type="text/javascript">
+    (function() {
+        var options = {
+            styles: {
+                "background-color": "#b3d9ff"
+            }
+        };
+
+        /* Every popup created by p.add will have these options */
+        var p = new Popups(options);
+
+        /* Overrides styles for the new popup. 
+        Appends the html code for the popup at the end of the body.*/
+        p.add('popup1', {
+            header: "The great sample popup!"
+        });
+
+        $("#show").click(function() {
+            /*Shows the popup */
+            p.show('popup1');
+        });
+        $("#hide").click(function() {
+            /*Hides the popup */
+            p.hide('popup1');
+        });
+    })();
+</script>
+
+
+
+</html>
