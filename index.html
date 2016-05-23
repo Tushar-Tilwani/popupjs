@@ -20,7 +20,8 @@
 
 <body>
     <button id="show">Show</button>
-    <button id="hide">Hide</button>
+    <button id="hide1">Hide 1</button>
+    <button id="hide2">Hide 2</button>
 </body>
 
 
@@ -38,16 +39,31 @@
         /* Overrides styles for the new popup. 
         Appends the html code for the popup at the end of the body.*/
         p.add('popup1', {
-            header: "The great sample popup!"
+            header: "The great sample popup!", styles: {
+                top:400
+            }
+        });
+
+         p.add('popup2', {
+            styles: {
+                "background-color": "green"
+            }
         });
 
         $("#show").click(function() {
             /*Shows the popup */
             p.show('popup1');
+            p.show('popup2');
         });
-        $("#hide").click(function() {
+        
+        $("#hide1").click(function() {
             /*Hides the popup */
             p.hide('popup1');
+        });
+
+        $("#hide2").click(function() {
+            /*Hides the popup */
+            p.hide('popup2');
         });
     })();
 </script>
